@@ -78,7 +78,7 @@ for i in tagged_words:
     print(i[0],' ----> ',i[1])
 
 input()
-chunking = (''' NP: {<DT>?<NNP|NN>*<CD>?}''')
+chunking = (''' NP: {<DT>?<NNP>*<CD>?}''')
 
 chunk_parse = nltk.RegexpParser(chunking)
 chunked = chunk_parse.parse(tagged_words)
