@@ -12,7 +12,7 @@ count = 0
 os.system('cls')
 
 if s== '1':
-    print("Enter text")
+    print("\n\nEnter text")
     text = input()
 
 elif s == '2':
@@ -54,36 +54,30 @@ elif s == '2':
 
     text = movie_reviews.raw(file_name)
 
-    
 count = 0
-
 
 for i in sent_tokenize(text):
     count = count + 1
     print (count,') ',i)
 
-print ("Enter sentence number for further analysis.")
+print ("\n\n\nEnter sentence number for further analysis.")
 
 sent_no = int(input())
 
 sent = sent_tokenize(text)[sent_no-1]
 
 os.system('cls')
-print ("Tokenizing words")
+print ("\n\n\nTagging tokens")
 
 word_list = word_tokenize(sent)
-
-pattern = "\w+|[^\w\s]+"
 
 tagged_words = nltk.pos_tag(word_list)
 count = 1
 for i in tagged_words:
     count = count +1
-    print(i[0],' ----> ',i[1],'  ',count)
+    print(i[0],' ----> ',i[1])
 
 input()
-
-
 chunking = (''' NP: {<DT>?<JJ|JJS>?<PRP$|PRP>*<NN|NNP|NNS>*<CD>*}
                 ADVP: {<JJ><NP>*<RB>?}
                 PP: {<IN|TO><NP>}
@@ -100,3 +94,4 @@ chunked.draw()
 
 named = nltk.ne_chunk(tagged_words)
 named.draw()
+
